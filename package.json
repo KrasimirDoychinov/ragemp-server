@@ -1,16 +1,24 @@
 {
-  "name": "server-files",
+  "name": "rage-accounts",
   "version": "1.0.0",
-  "description": "",
+  "description": "A MySQL boilerplate to quickly create an account system without all the work.",
   "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RageMpOpenSource/RAGE-Accounts.git"
+  },
+  "author": "MrPancakers",
   "license": "ISC",
-  "devDependencies": {
-    "@types/ragemp-c": "github:CocaColaBear/types-ragemp-c#master",
-    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#master"
-  }
+  "bugs": {
+    "url": "https://github.com/RageMpOpenSource/RAGE-Accounts/issues"
+  },
+  "homepage": "https://github.com/RageMpOpenSource/RAGE-Accounts#readme"
 }
