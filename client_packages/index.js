@@ -14,7 +14,15 @@ mp.events.add('playerReady', () => {
 });
 
 mp.events.add('playerDeath', (player, reason, killer) => {
-    mp.gui.chat.push(`${killer.name} killed ${player.name}`);
+    if (killer) {
+        mp.gui.chat.push(`${killer.name} killed ${player.name}`);
+    } else {
+        mp.gui.chat.push(`${player.name} kamikaze.`);
+    }
+});
+
+mp.events.add("playerChat", (player,message) =>{
+    player.call('Send_ToChat',[player,message]);
 });
 
 
