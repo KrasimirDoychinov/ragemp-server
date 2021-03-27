@@ -1,7 +1,7 @@
 {
 	"maxplayers" : 2,
 	"name" : "Votssy", 
-	"gamemode" : "freeroam", 
+	"gamemode" : "deathmatch", 
 	"stream-distance" : 500.0,
 	"announce" : true,
 	"csharp" : "disabled",
