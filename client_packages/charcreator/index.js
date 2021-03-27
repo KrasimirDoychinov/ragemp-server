@@ -1,6 +1,6 @@
 // shitcode will be better in the future
-const NativeUI = require("nativeui");
-const Data = require("charcreator/data");
+const NativeUI = require("../nativeui/index.js");
+const Data = require("./data.js");
 
 const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
