@@ -2,7 +2,10 @@
     const deathName = player.name;
     if (killer) {
         const killerName = killer.name;
-        player.outputChatBox(`!{#FF0000}${player.name} se metna!`);
+        player.outputChatBox(`!{#FF0000}${player.name} was killed by ${killer.name}!`);
+    } else {
+        player.outputChatBox(`!{#FF0000}${player.name} commited sepuku!`);
+
     }
 
     setTimeout(() => {
