@@ -6,5 +6,9 @@ require('./login.js');
 mp.events.add('playerReady', () => {
     mp.events.call('client:showLoginScreen');
 });
+
+mp.events.add('playerDeath', (player) => {
+    mp.gui.chat.push(`${player.name} umrq. JINA!`);
+});
 require('charcreator');
 require("nativeui");
