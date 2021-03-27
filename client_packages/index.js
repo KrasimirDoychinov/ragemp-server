@@ -1,3 +1,6 @@
+require('charcreator');
+require("nativeui");
+
 mp.events.add("playerQuit", (player) => {
     mp.game.graphics.notify(`<C>${player.name}</C> (ID:${player.remoteId}) left the server`);
 });
@@ -10,5 +13,3 @@ mp.events.add('playerReady', () => {
 mp.events.add('playerDeath', (player) => {
     mp.gui.chat.push(`${player.name} umrq. JINA!`);
 });
-require('charcreator');
-require("nativeui");
