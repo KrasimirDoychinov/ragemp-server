@@ -1,8 +1,7 @@
 mp.gui.execute("window.location = 'package://chat/index.html'");
-require('./chat/chat.js');
+require('chat');
 require('charcreator');
 require("nativeui");
-
 
 mp.events.add("playerQuit", (player) => {
     mp.game.graphics.notify(`<C>${player.name}</C> (ID:${player.remoteId}) left the server`);
@@ -20,9 +19,4 @@ mp.events.add('playerDeath', (player, reason, killer) => {
         mp.gui.chat.push(`${player.name} kamikaze.`);
     }
 });
-
-mp.events.add("playerChat", (player,message) =>{
-    player.call('Send_ToChat',[player,message]);
-});
-
 
