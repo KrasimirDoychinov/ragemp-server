@@ -1,13 +1,6 @@
-mp.events.addCommand('resetPos', (player) => {
-    player.position.x = -425.517;
-    player.position.y = 1123.620;
-    player.position.z = 325.8544;
-});
-
-mp.events.addCommand('kill', (player) => {
-    player.health = 0;
-});
-
-mp.events.addCommand('heal', (player) => {
+﻿mp.events.add('playerDeath', (player) => {
+    mp.gui.chat.push(`${player.name} sho si jina e `);
+    player.spawn(new mp.Vector3(-425.517, 1123.620, 325.8544));
     player.health = 100;
 });
+
