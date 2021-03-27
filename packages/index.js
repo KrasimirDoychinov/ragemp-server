@@ -9,8 +9,9 @@ function playerQuitHandler(player, exitType, reason) {
   } else {
     str = ` kicked. Reason: ${reason}.`;
   }
-
-  console.log(str);
 }
+mp.events.add("playerChat", (player,message) =>{
+  player.call('Send_ToChat',[player,message]);
+});
 
 mp.events.add("playerQuit", playerQuitHandler);
