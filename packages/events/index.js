@@ -2,13 +2,17 @@
     const deathName = player.name;
     if (killer) {
         const killerName = killer.name;
-        mp.players.broadcast(`${killerName} killed ${deathName}. Reason: ${reason}`);
+        player.outputChatBox(`!{#FF0000}${player.name} se metna!`);
     }
-    
+
     setTimeout(() => {
         player.spawn(new mp.Vector3(-425.517, 1123.620, 325.8544));
         player.health = 100;
     }, 3000)
+});
+
+mp.events.add('playerChat', (player, message) => {
+    player.outputChatBox(`${player.name}: ${message}`);
 });
 
 

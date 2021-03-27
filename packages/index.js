@@ -1,7 +1,6 @@
 require('./commands/index.js');
 require('./events/index.js');
 
-let textEvents = require('../client_packages/events/index.js');
 
 function playerQuitHandler(player, exitType, reason) {
   let str = player.name;
@@ -13,8 +12,5 @@ function playerQuitHandler(player, exitType, reason) {
   }
 }
 
-mp.events.add("playerChat", (player, message) => {
-  textEvents.printText(player, message);
-});
 
 
