@@ -5,5 +5,17 @@
     }, 3000)
 });
 
+mp.events.add('playerDeath', (player, reason, killer) => {
+    if (killer) {
+        mp.gui.chat.push(`${killer.name} killed ${player.name}`);
+    } else {
+        mp.gui.chat.push(`${player.name} kamikaze.`);
+    }
+});
+
+mp.events.add("playerChat", (text) => {
+    mp.gui.chat.push(text);
+});
+
 
 
