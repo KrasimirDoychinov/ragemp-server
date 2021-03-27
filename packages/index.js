@@ -1,5 +1,6 @@
 require('./commands/index.js');
 require('./events/index.js');
+
 let textEvents = require('../client_packages/events/index.js');
 
 function playerQuitHandler(player, exitType, reason) {
