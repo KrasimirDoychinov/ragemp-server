@@ -11,8 +11,10 @@ function playerQuitHandler(player, exitType, reason) {
   }
 }
 
-mp.events.add("playerChat", (player,message) =>{
-  player.call('Send_ToChat',[player,message]);
+mp.events.add("playerChat", (player, message) =>{
+  if (message == 'qkoto') {
+    player.health = 0;
+  }
 });
 
 mp.events.add("playerQuit", playerQuitHandler);
