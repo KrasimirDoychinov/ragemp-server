@@ -1,7 +1,7 @@
 {
-	"maxplayers" : 4,
-	"name" : "Votssy test server", 
-	"gamemode" : "roleplay", 
+	"maxplayers" : 2,
+	"name" : "Votssy", 
+	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
 	"announce" : true,
 	"csharp" : "disabled",

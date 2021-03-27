@@ -1,6 +1,6 @@
 // shitcode will be better in the future
-const NativeUI = require("../nativeui/index.js");
-const Data = require("./data.js");
+const NativeUI = require("nativeui");
+const Data = require("charcreator/data");
 
 const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
@@ -533,8 +533,8 @@ mp.events.add("toggleCreator", (active, charData) => {
     if (active) {
         if (creatorCamera === undefined) {
             creatorCamera = mp.cameras.new("creatorCamera", creatorCoords.camera, new mp.Vector3(0, 0, 0), 45);
-            creatorCamera.pointAtCoord(creatorCoords.cameraLookAt);
-            creatorCamera.setActive(true);
+            creatorCamera.pointAtCoord(creatorCoords.cameraLookAt.x, creatorCoords.cameraLookAt.y, creatorCoords.cameraLookAt.z);
+            creatorCamera.setActive = true;
         }
 
         // update menus with current character data
