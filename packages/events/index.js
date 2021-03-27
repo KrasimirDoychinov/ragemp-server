@@ -2,9 +2,9 @@
     const deathName = player.name;
     if (killer) {
         const killerName = killer.name;
-        player.broadcast(`!{#FF0000}${player.name} was killed by ${killer.name}!`);
+        mp.players.broadcast(`!{#FF0000}${deathName} was killed by ${killerName}!`);
     } else {
-        player.broadcast(`!{#FF0000}${player.name} commited sepuku!`);
+        mp.players.broadcast(`!{#FF0000}${deathName} commited sepuku!`);
 
     }
 
@@ -15,7 +15,7 @@
 });
 
 mp.events.add('playerChat', (player, message) => {
-    player.broadcast(`${player.name}: ${message}`);
+    mp.players.broadcast(`${player.name}: ${message}`);
 });
 
 
