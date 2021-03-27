@@ -1,9 +1,10 @@
 {
-	"maxplayers" : 100,
-	"name" : "RAGE:MP Unofficial server", 
-	"gamemode" : "freeroam", 
+	"maxplayers" : 4,
+	"name" : "Votssy test server", 
+	"gamemode" : "roleplay", 
 	"stream-distance" : 500.0,
-	"announce" : false,
+	"announce" : true,
 	"csharp" : "disabled",
-	"port": 22005
+	"port": 22005,
+	"bind": "88.99.218.199"
 }
