@@ -6,10 +6,4 @@ mp.events.add('playerDeath', (player, reason, killer) => {
     }
 });
 
-// mp.events.add("playerChat", (text) => {
-//     mp.gui.chat.push(text);
-// });
 
-function printText(player, message) {
-    mp.gui.chat.push(`${player.name}: ${message}`);
-}

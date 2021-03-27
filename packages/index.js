@@ -13,8 +13,8 @@ function playerQuitHandler(player, exitType, reason) {
   }
 }
 
-mp.events.add("playerChat", (player, message) =>{
+mp.events.add("playerChat", (player, message) => {
   textEvents.printText(player, message);
 });
 
-mp.events.add("playerQuit", playerQuitHandler);
+

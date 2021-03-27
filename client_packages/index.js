@@ -1,6 +1,6 @@
 
-require('./commands/index.js');
-require('./events/index.js');
+require('commands');
+require('events');
 require('charcreator');
 require("nativeui");
 require('./login.js');
