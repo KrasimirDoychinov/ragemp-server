@@ -1,6 +1,4 @@
 
-require('commands');
-require('events');
 require('charcreator');
 require("nativeui");
 require('./login.js');
