@@ -19,3 +19,43 @@ mp.events.addCommand('health', (player) => {
     player.health = 50;
 });
 
+mp.events.addCommand('low', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 5,`[Low] ${player.name} says: ${message}`);
+});
+
+mp.events.addCommand('do', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 15,`!{c2a3da}*  ${message} ((${player.name}))`);
+});
+
+mp.events.addCommand('me', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 15,`!{c2a3da}* ${player.name} ${message}`);
+});
+
+mp.events.addCommand('my', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 15,`!{c2a3da}* ${player.name}'s ${message}`);
+});
+mp.events.addCommand('dol', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 5,`!{c2a3da}*  ${message} ((${player.name}))`);
+});
+
+mp.events.addCommand('mel', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 5,`!{c2a3da}* ${player.name} ${message}`);
+});
+
+mp.events.addCommand('myl', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 5,`!{c2a3da}* ${player.name}'s ${message}`);
+});

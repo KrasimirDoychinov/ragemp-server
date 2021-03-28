@@ -54,6 +54,7 @@ mp.events.add('server:loadAccount', async (player, username) => {
 mp.events.add('playerJoin', (player) => {
     player.setVariable("loggedIn", false);
     timeoutKick(player);
+
 });
 
 //  Saves the account data upon player quitting (only logged in users)
@@ -132,6 +133,7 @@ function successLoginHandle(player, handle, username){
     mp.events.call("server:loadAccount", player, username);
     player.call('client:loginHandler', [handle]);
     console.log(`${username} has successfully logged in.`);
+
 }
 
 //  Sets an idle kick timeout users receive upon joining the server and are waiting to login

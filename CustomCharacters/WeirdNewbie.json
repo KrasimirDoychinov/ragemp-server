@@ -1,10 +1,10 @@
 {
-    "Gender": 0,
+    "Gender": 1,
     "Parents": {
         "Father": 0,
         "Mother": 21,
-        "Similarity": 1,
-        "SkinSimilarity": 1
+        "Similarity": 0,
+        "SkinSimilarity": 0
     },
     "Features": [
         0,
@@ -75,14 +75,14 @@
         }
     ],
     "Hair": {
-        "Hair": 31,
-        "Color": 63,
-        "HighlightColor": 4
+        "Hair": 7,
+        "Color": 27,
+        "HighlightColor": 13
     },
-    "EyebrowColor": 21,
-    "BeardColor": 57,
-    "EyeColor": 22,
-    "BlushColor": 14,
-    "LipstickColor": 5,
-    "ChestHairColor": 58
+    "EyebrowColor": 39,
+    "BeardColor": 58,
+    "EyeColor": 15,
+    "BlushColor": 11,
+    "LipstickColor": 0,
+    "ChestHairColor": 23
 }

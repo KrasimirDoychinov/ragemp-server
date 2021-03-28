@@ -15,7 +15,9 @@
 });
 
 mp.events.add('playerChat', (player, message) => {
-    mp.players.broadcast(`${player.name}: ${message}`);
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 15,`!{f1f1f1}${player.name} says: ${message}`);
 });
 
 
