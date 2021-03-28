@@ -1,4 +1,6 @@
 
+// ADMIN
+// Admin commands
 mp.events.addCommand('resetpos', (player) => {
     player.spawn(new mp.Vector3(-425.517, 1123.620, 325.8544));
 });
@@ -19,6 +21,8 @@ mp.events.addCommand('health', (player) => {
     player.health = 50;
 });
 
+// CHAT
+// Main chat command
 function chatCommand(player, message, helper, result, range) {
     let pos = player.position;
     if (message) {
@@ -32,126 +36,47 @@ function chatCommand(player, message, helper, result, range) {
     }
 }
 
+// Chat commands
 mp.events.addCommand('low', (player, message) => {
-    chatCommand(player, message, '(Low): /low [message] WORKS', `!{999999}[Low] ${player.name} says: ${message} WORKS`, 10);
-    // let pos = player.position;
-    // if (message) {
-    //     if (message.trim() == '') {
-    //         player.outputChatBox('(Low): /low [message]');
-    //         return;
-    //     }
-    //     mp.players.broadcastInRange(pos, 10, `!{999999}[Low] ${player.name} says: ${message}`);
-    // } else {
-    //     player.outputChatBox('(Low): /low [message]');
-    // }
+    chatCommand(player, message, '(Low): /low [message]', `!{999999}[Low] ${player.name} says: ${message}`, 10);
 });
 
 mp.events.addCommand('do', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(Do): /do [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 20, `!{c2a3da}*  ${message} ((${player.name}))`);
-    } else {
-        player.outputChatBox('(Do): /do [action]');
-    }
+    chatCommand(player, message, '(Do): /do [action]', `!{c2a3da}*  ${message} ((${player.name}))`, 20);
 });
 
 mp.events.addCommand('me', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(Me): /me [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 20, `!{c2a3da}* ${player.name} ${message}`);
-    } else {
-        player.outputChatBox('(Me): /me [action]');
-    }
+    chatCommand(player, message, '(Me): /me [action]', `!{c2a3da}* ${player.name} ${message}`, 20);
 
 });
 
 mp.events.addCommand('my', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(My): /my [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 20, `!{c2a3da}* ${player.name}'s ${message}`);
-    } else {
-        player.outputChatBox('(My): /my [action]');
-    }
+    chatCommand(player, message, '(My): /my [action]', `!{c2a3da}* ${player.name}'s ${message}`, 20);
 
 });
 mp.events.addCommand('dol', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(Do low): /dol [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 10, `!{c2a3da}*  ${message} ((${player.name}))`);
-    } else {
-        player.outputChatBox('(Do low): /dol [action]');
-    }
+    chatCommand(player, message, '(Do low): /dol [action]', `!{c2a3da}*  ${message} ((${player.name}))`, 10);
 });
 
 mp.events.addCommand('mel', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(Me low): /mel [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 10, `!{c2a3da}* ${player.name} ${message}`);
-    } else {
-        player.outputChatBox('(Me low): /mel [action]');
-    }
+    chatCommand(player, message, '(Me low): /mel [action]', `!{c2a3da}* ${player.name} ${message}`, 10);
 });
 
 mp.events.addCommand('myl', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(My low): /myl [action]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 10, `!{c2a3da}* ${player.name}'s ${message}`);
-    } else {
-        player.outputChatBox('(My low): /myl [action]');
-    }
+    chatCommand(player, message, '(My low): /myl [action]', `!{c2a3da}* ${player.name}'s ${message}`, 10);
 });
 
 mp.events.addCommand('b', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(OOC): /b [message]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 25, `!{424242} ((${player.name}: ${message}))`);
-    } else {
-        player.outputChatBox('(OOC): /b [message]');
-    }
+    chatCommand(player, message, '(OOC): /b [message]', `!{424242} ((${player.name}: ${message}))`, 25)
+    
 });
 
 mp.events.addCommand('s', (player, message) => {
-    let pos = player.position;
-    if (message) {
-        if (message.trim() == '') {
-            player.outputChatBox('(Shout): /s [message]');
-            return;
-        }
-        mp.players.broadcastInRange(pos, 25, `!{FFFFFF} ${player.name} shouts: ${message}`);
-    } else {
-        player.outputChatBox('(Shout): /s [message]');
-    }
+    chatCommand(player, message, '(Shout): /s [message]', `!{FFFFFF} ${player.name} shouts: ${message}`, 25);
 });
 
-mp.events.addCommand('w', (player, message) => {
+// TODO: Make the PM work with ID's
+mp.events.addCommand('pm', (player, message) => {
     if (message.trim() != '' && message.split(' ').length >= 2) {
         let arr = message.split(' ');
         let result = arr.splice(0, 1);
@@ -173,10 +98,10 @@ mp.events.addCommand('w', (player, message) => {
         if (!foundPlayer) {
             player.outputChatBox('Player not found');
         } else {
-            player.outputChatBox(`!{FFFF00}((To ${foundPlayer.name}: ${splitMsg}))`);
-            foundPlayer.outputChatBox(`!{FFFF00}((From ${player.name}: ${splitMsg}))`);
+            player.outputChatBox(`!{FFFF00}((PM to (${foundPlayer.id}) ${foundPlayer.name}: ${splitMsg}))`);
+            foundPlayer.outputChatBox(`!{FFFF00}((PM from (${player.id}) ${player.name}: ${splitMsg}))`);
         }
     } else {
-        player.outputChatBox('(Whisper): /w [player name] [message]');
+        player.outputChatBox('(PM): /p [player name] [message]');
     }
 });
