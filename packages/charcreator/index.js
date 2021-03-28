@@ -105,8 +105,10 @@ mp.events.add("playerJoin", (player) => {
         for (let i = 0; i < 10; i++) this.setHeadOverlay(i, [this.customCharacter.Appearance[i].Value, this.customCharacter.Appearance[i].Opacity, this.colorForOverlayIdx(i), 0]);
     };
 
+    console.log(player.name + 'player.name');
+    console.log(this.name + 'this.name');
     player.loadCharacter = function() {
-        fs.readFile(`${saveDirectory}/${this.name}.json`, (err, data) => {
+        fs.readFile(`${saveDirectory}/${player.name}.json`, (err, data) => {
             if (err) {
                 if (err.code != "ENOENT") {
                     console.log(`Couldn't read ${this.name}'s character. Reason: ${err.message}`);
