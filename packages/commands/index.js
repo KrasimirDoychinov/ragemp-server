@@ -77,29 +77,33 @@ mp.events.addCommand('s', (player, message) => {
 
 // TODO: Make the PM work with ID's
 mp.events.addCommand('pm', (player, message) => {
-    if (message.trim() != '' && message.split(' ').length >= 2) {
-        let arr = message.split(' ');
-        let result = arr.splice(0, 1);
-        result.push(arr.join(' '));
-
-        let recipientName = result[0];
-        let splitMsg = result[1];
-
-        let foundPlayer = null;
-
-        if (!foundPlayer) {
-            mp.players.forEach((_player) => {
-                if (_player.name === recipientName) {
-                    foundPlayer = _player;
-                }
-            });
-        }
-
-        if (!foundPlayer) {
-            player.outputChatBox('Player not found');
+    if (message) {
+        if (message.trim() != '' && message.split(' ').length >= 2) {
+            let arr = message.split(' ');
+            let result = arr.splice(0, 1);
+            result.push(arr.join(' '));
+    
+            let recipientName = result[0];
+            let splitMsg = result[1];
+    
+            let foundPlayer = null;
+    
+            if (!foundPlayer) {
+                mp.players.forEach((_player) => {
+                    if (_player.name === recipientName) {
+                        foundPlayer = _player;
+                    }
+                });
+            }
+    
+            if (!foundPlayer) {
+                player.outputChatBox('Player not found');
+            } else {
+                player.outputChatBox(`!{FFFF00}((PM to (${foundPlayer.id}) ${foundPlayer.name}: ${splitMsg}))`);
+                foundPlayer.outputChatBox(`!{FFFF00}((PM from (${player.id}) ${player.name}: ${splitMsg}))`);
+            }
         } else {
-            player.outputChatBox(`!{FFFF00}((PM to (${foundPlayer.id}) ${foundPlayer.name}: ${splitMsg}))`);
-            foundPlayer.outputChatBox(`!{FFFF00}((PM from (${player.id}) ${player.name}: ${splitMsg}))`);
+            player.outputChatBox('(PM): /p [player name] [message]');
         }
     } else {
         player.outputChatBox('(PM): /p [player name] [message]');
