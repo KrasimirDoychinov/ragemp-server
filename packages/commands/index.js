@@ -33,7 +33,7 @@ function chatCommand(player, message, helper, result, range) {
 }
 
 mp.events.addCommand('low', (player, message) => {
-    chatCommand(player, message, '(Low): /low [message]', `!{999999}[Low] ${player.name} says: ${message}`, 10);
+    chatCommand(player, message, '(Low): /low [message] WORKS', `!{999999}[Low] ${player.name} says: ${message} WORKS`, 10);
     // let pos = player.position;
     // if (message) {
     //     if (message.trim() == '') {
