@@ -19,14 +19,31 @@ mp.events.addCommand('health', (player) => {
     player.health = 50;
 });
 
-mp.events.addCommand('low', (player, message) => {
+function chatCommand(player, message, helper, result, range) {
     let pos = player.position;
     if (message) {
         if (message.trim() == '') {
-            player.outputChatBox('(Low): /low [message]');
+            player.outputChatBox(helper);
+            return;
         }
-        mp.players.broadcastInRange(pos, 10, `!{999999}[Low] ${player.name} says: ${message}`);
+        mp.players.broadcastInRange(pos, range, result);
+    } else {
+        player.outputChatBox(helper);
     }
+}
+
+mp.events.addCommand('low', (player, message) => {
+    chatCommand(player, message, '(Low): /low [message]', `!{999999}[Low] ${player.name} says: ${message}`, 10);
+    // let pos = player.position;
+    // if (message) {
+    //     if (message.trim() == '') {
+    //         player.outputChatBox('(Low): /low [message]');
+    //         return;
+    //     }
+    //     mp.players.broadcastInRange(pos, 10, `!{999999}[Low] ${player.name} says: ${message}`);
+    // } else {
+    //     player.outputChatBox('(Low): /low [message]');
+    // }
 });
 
 mp.events.addCommand('do', (player, message) => {
@@ -34,8 +51,11 @@ mp.events.addCommand('do', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(Do): /do [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 20, `!{c2a3da}*  ${message} ((${player.name}))`);
+    } else {
+        player.outputChatBox('(Do): /do [action]');
     }
 });
 
@@ -44,8 +64,11 @@ mp.events.addCommand('me', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(Me): /me [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 20, `!{c2a3da}* ${player.name} ${message}`);
+    } else {
+        player.outputChatBox('(Me): /me [action]');
     }
 
 });
@@ -55,8 +78,11 @@ mp.events.addCommand('my', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(My): /my [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 20, `!{c2a3da}* ${player.name}'s ${message}`);
+    } else {
+        player.outputChatBox('(My): /my [action]');
     }
 
 });
@@ -65,8 +91,11 @@ mp.events.addCommand('dol', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(Do low): /dol [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 10, `!{c2a3da}*  ${message} ((${player.name}))`);
+    } else {
+        player.outputChatBox('(Do low): /dol [action]');
     }
 });
 
@@ -75,8 +104,11 @@ mp.events.addCommand('mel', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(Me low): /mel [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 10, `!{c2a3da}* ${player.name} ${message}`);
+    } else {
+        player.outputChatBox('(Me low): /mel [action]');
     }
 });
 
@@ -85,8 +117,11 @@ mp.events.addCommand('myl', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(My low): /myl [action]');
+            return;
         }
         mp.players.broadcastInRange(pos, 10, `!{c2a3da}* ${player.name}'s ${message}`);
+    } else {
+        player.outputChatBox('(My low): /myl [action]');
     }
 });
 
@@ -95,8 +130,11 @@ mp.events.addCommand('b', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(OOC): /b [message]');
+            return;
         }
         mp.players.broadcastInRange(pos, 25, `!{424242} ((${player.name}: ${message}))`);
+    } else {
+        player.outputChatBox('(OOC): /b [message]');
     }
 });
 
@@ -105,8 +143,11 @@ mp.events.addCommand('s', (player, message) => {
     if (message) {
         if (message.trim() == '') {
             player.outputChatBox('(Shout): /s [message]');
+            return;
         }
         mp.players.broadcastInRange(pos, 25, `!{FFFFFF} ${player.name} shouts: ${message}`);
+    } else {
+        player.outputChatBox('(Shout): /s [message]');
     }
 });
 
