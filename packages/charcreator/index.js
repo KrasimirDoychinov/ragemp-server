@@ -117,6 +117,9 @@ mp.events.add("playerJoin", (player) => {
                 this.customCharacter = JSON.parse(data);
                 this.applyCharacter();
             }
+
+
+            
         });
     };
 

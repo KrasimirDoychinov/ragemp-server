@@ -1,88 +1,88 @@
 {
-    "Gender": 0,
+    "Gender": 1,
     "Parents": {
-        "Father": 0,
-        "Mother": 21,
-        "Similarity": 1,
-        "SkinSimilarity": 1
+        "Father": 16,
+        "Mother": 22,
+        "Similarity": 0.34,
+        "SkinSimilarity": 0.55
     },
     "Features": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        0.14,
+        -0.11,
+        -0.78,
+        0.52,
+        -0.59,
+        0.79,
+        0.42,
+        0.25,
+        -0.91,
+        -0.86,
+        0.87,
+        0.2,
+        0.41,
+        -0.05,
+        0.99,
+        -0.15,
+        -0.68,
+        -1,
+        0.03,
+        -0.2
     ],
     "Appearance": [
         {
-            "Value": 255,
-            "Opacity": 1
+            "Value": 11,
+            "Opacity": 0
+        },
+        {
+            "Value": 20,
+            "Opacity": 0.43
+        },
+        {
+            "Value": 27,
+            "Opacity": 0.85
+        },
+        {
+            "Value": 13,
+            "Opacity": 0.62
+        },
+        {
+            "Value": 51,
+            "Opacity": 0.8
+        },
+        {
+            "Value": 1,
+            "Opacity": 0.1
+        },
+        {
+            "Value": 7,
+            "Opacity": 0.17
+        },
+        {
+            "Value": 4,
+            "Opacity": 0.59
         },
         {
             "Value": 255,
-            "Opacity": 1
+            "Opacity": 0.98
         },
         {
-            "Value": 255,
-            "Opacity": 1
+            "Value": 4,
+            "Opacity": 0.44
         },
         {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
-        },
-        {
-            "Value": 255,
-            "Opacity": 1
+            "Value": 15,
+            "Opacity": 0.05
         }
     ],
     "Hair": {
-        "Hair": 31,
-        "Color": 63,
-        "HighlightColor": 4
+        "Hair": 34,
+        "Color": 59,
+        "HighlightColor": 45
     },
-    "EyebrowColor": 21,
-    "BeardColor": 57,
-    "EyeColor": 22,
-    "BlushColor": 14,
-    "LipstickColor": 5,
-    "ChestHairColor": 58
+    "EyebrowColor": 24,
+    "BeardColor": 55,
+    "EyeColor": 1,
+    "BlushColor": 4,
+    "LipstickColor": 2,
+    "ChestHairColor": 35
 }

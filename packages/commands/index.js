@@ -22,40 +22,52 @@ mp.events.addCommand('health', (player) => {
 mp.events.addCommand('low', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 5,`[Low] ${player.name} says: ${message}`);
+    mp.players.broadcastInRange(pos, 10,`!{999999}[Low] ${player.name} says: ${message}`);
 });
 
 mp.events.addCommand('do', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 15,`!{c2a3da}*  ${message} ((${player.name}))`);
+    mp.players.broadcastInRange(pos, 20,`!{c2a3da}*  ${message} ((${player.name}))`);
 });
 
 mp.events.addCommand('me', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 15,`!{c2a3da}* ${player.name} ${message}`);
+    mp.players.broadcastInRange(pos, 20,`!{c2a3da}* ${player.name} ${message}`);
 });
 
 mp.events.addCommand('my', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 15,`!{c2a3da}* ${player.name}'s ${message}`);
+    mp.players.broadcastInRange(pos, 20,`!{c2a3da}* ${player.name}'s ${message}`);
 });
 mp.events.addCommand('dol', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 5,`!{c2a3da}*  ${message} ((${player.name}))`);
+    mp.players.broadcastInRange(pos, 10,`!{c2a3da}*  ${message} ((${player.name}))`);
 });
 
 mp.events.addCommand('mel', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 5,`!{c2a3da}* ${player.name} ${message}`);
+    mp.players.broadcastInRange(pos, 10,`!{c2a3da}* ${player.name} ${message}`);
 });
 
 mp.events.addCommand('myl', (player, message) => {
     let pos = player.position;
 
-    mp.players.broadcastInRange(pos, 5,`!{c2a3da}* ${player.name}'s ${message}`);
+    mp.players.broadcastInRange(pos, 10,`!{c2a3da}* ${player.name}'s ${message}`);
+});
+
+mp.events.addCommand('b', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 25,`!{424242} OOC:((${player.name}: ${message}))`);
+});
+
+mp.events.addCommand('s', (player, message) => {
+    let pos = player.position;
+
+    mp.players.broadcastInRange(pos, 25,`!{FFFFFF} ${player.name} shouts: ${message}`);
 });
