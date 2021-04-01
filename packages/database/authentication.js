@@ -72,7 +72,6 @@ mp.events.add('playerQuit', async (player) => {
 async function attemptRegister(player, username, email, pass){
     try {
         const [rows] = await mp.db.query('SELECT * FROM `accounts` WHERE `username` = ? OR `email` = ?', [username, email]);
-
         //  If an account is found, return false as it is taken
         if(rows.length !== 0) return false;
 

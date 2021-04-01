@@ -101,7 +101,6 @@ mp.events.add('client:disableLoginCamera', () => {
 
 mp.events.add('client:showCharacterScreen', () =>  {
     loginBrowser.destroy();
-    console.log('works');
     let browser = mp.browsers.new('package://cef/character/picker.html');
     mp.players.local.freezePosition(true);
     mp.game.ui.setMinimapVisible(true);
