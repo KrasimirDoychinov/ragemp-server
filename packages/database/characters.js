@@ -8,6 +8,17 @@ mp.events.add('server:createCharacter', async (player, firstName, lastName) => {
     } catch(e) { errorHandler(e) };
 });
 
+mp.events.add('server:getAccCharacters', async (player) => {
+    
+});
+
+async function getAccCharacters(player) {
+    let [playerId] = await mp.db.query('SELECT `playerId` FROM `accounts` WHERE `username` = ?', [player.username]);
+    console.log(playerId);
+    let [result] = await mp.db.query('SELECT * FROM `characters` WHERE `playerId` =?', [playerId[0].playerId]);
+    console.log(result);
+}
+
 async function createCharcter(player, fullName){
     try {
         const result = await mp.db.query('INSERT INTO `characters` SET `fullName` = ?, `playerId` = ?', [fullName, player.remoteId]);

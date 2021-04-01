@@ -9,5 +9,5 @@ CREATE TABLE `characters` (
     INDEX `idxCharacter` (ID),
     CONSTRAINT `fk_character_player`
     FOREIGN KEY (playerId)
-    REFERENCES accounts(ID) ON UPDATE CASCADE ON DELETE RESTRICT
+    REFERENCES accounts(ID) ON DELETE RESTRICT
 );
