@@ -98,3 +98,16 @@ mp.events.add('client:disableLoginCamera', () => {
     mp.game.cam.renderScriptCams(false, false, 0, false, false);
     mp.players.local.freezePosition(false);
 });
+
+mp.events.add('client:showCharacterScreen', () =>  {
+    loginBrowser.destroy();
+    console.log('works');
+    let browser = mp.browsers.new('package://cef/character/picker.html');
+    mp.players.local.freezePosition(true);
+    mp.game.ui.setMinimapVisible(true);
+    mp.gui.chat.activate(false);
+    mp.gui.chat.show(false);
+    setTimeout(() => { mp.gui.cursor.show(true, true); }, 500);
+    mp.game.ui.displayRadar(false);
+    mp.events.call('client:enableLoginCamera');
+})

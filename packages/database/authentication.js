@@ -130,10 +130,11 @@ function successLoginHandle(player, handle, username){
         clearTimeout(player.idleKick);
         player.idleKick = null;
     }
-    mp.events.call("server:loadAccount", player, username);
-    player.call('client:loginHandler', [handle]);
+    // mp.events.call("server:loadAccount", player, username);
+    // player.call('client:loginHandler', [handle]);
     console.log(`${username} has successfully logged in.`);
-
+    player.call('client:showCharacterScreen');
+    // player.loadCharacter(username);
 }
 
 //  Sets an idle kick timeout users receive upon joining the server and are waiting to login

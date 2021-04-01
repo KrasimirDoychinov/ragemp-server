@@ -105,23 +105,19 @@ mp.events.add("playerJoin", (player) => {
         for (let i = 0; i < 10; i++) this.setHeadOverlay(i, [this.customCharacter.Appearance[i].Value, this.customCharacter.Appearance[i].Opacity, this.colorForOverlayIdx(i), 0]);
     };
 
-    console.log(player.name + 'player.name');
-    console.log(this.name + 'this.name');
-    player.loadCharacter = function() {
-        fs.readFile(`${saveDirectory}/${player.name}.json`, (err, data) => {
+    player.loadCharacter = function(username) {
+        fs.readFile(`${saveDirectory}/${username}.json`, (err, data) => {
             if (err) {
                 if (err.code != "ENOENT") {
-                    console.log(`Couldn't read ${this.name}'s character. Reason: ${err.message}`);
+                    console.log(`Couldn't read ${username}'s character. Reason: ${err.message}`);
                 } else {
                     this.defaultCharacter();
+                    console.log('default load');
                 }
             } else {
                 this.customCharacter = JSON.parse(data);
                 this.applyCharacter();
             }
-
-
-            
         });
     };
 
