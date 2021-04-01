@@ -25,6 +25,7 @@ mp.events.add('server:registerAccount', async (player, username, email, password
 //  Called when a user wants to login to an account
 //  NOTE: This event doesn't load the data onto the account, use server:loadAccount
 mp.events.add('server:loginAccount', async (player, username, password) => {
+    player.username = username;
     //  Loop through players array to find any matching usernames currently logged in
     let loggedAccount = mp.players.toArray().find(p => p.getVariable('username') === username);
     if(loggedAccount) return player.call('client:loginHandler', ['logged']);
